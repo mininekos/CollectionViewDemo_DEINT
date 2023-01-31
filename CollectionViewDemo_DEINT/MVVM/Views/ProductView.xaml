@@ -15,10 +15,28 @@
     <ScrollView>
         <VerticalStackLayout>
             <CollectionView
-            ItemsSource="{Binding Products}"
-            ItemTemplate="{DynamicResource ProductTemplate}"
-            >
+                ItemsSource="{Binding Products}"
+                ItemTemplate="{DynamicResource ProductTemplate}"
+
+                >
+                <CollectionView.ItemsLayout>
+                    <!--<LinearItemsLayout Orientation="Vertical" ItemSpacing="50"/>-->
+                    <!--Se ven mal por el estilo puesto-->
+                    <!--<LinearItemsLayout Orientation="Horizontal" ItemSpacing="50"/>-->
+                    <GridItemsLayout Orientation="Vertical" Span="2"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.Header>
+                    <Label
+                        Text="Principio"
+                        />
+                </CollectionView.Header>
+                <CollectionView.Footer>
+                    <Label
+                        Text="Fin"
+                        />
+                </CollectionView.Footer>
             </CollectionView>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
