@@ -14,8 +14,9 @@
     
     <ScrollView>
         <VerticalStackLayout>
-            <!--SelectionChanged="CollectionView_SelectionChanged"
-                SelectionMode="Single"-->
+            <!-- Se hace para navegar
+            SelectionChanged="CollectionView_SelectionChanged"
+            SelectionMode="Single"-->
             <CollectionView
                 ItemsSource="{Binding Products}"
                 ItemTemplate="{DynamicResource ProductTemplate}"
