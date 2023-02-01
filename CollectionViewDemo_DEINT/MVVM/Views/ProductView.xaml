@@ -14,10 +14,14 @@
     
     <ScrollView>
         <VerticalStackLayout>
+            <!--SelectionChanged="CollectionView_SelectionChanged"
+                SelectionMode="Single"-->
             <CollectionView
                 ItemsSource="{Binding Products}"
                 ItemTemplate="{DynamicResource ProductTemplate}"
-
+                SelectionMode="Single" 
+                SelectionChangedCommand="{Binding ProductoChanged}"
+                SelectedItem="{Binding ProductoSeleccionado}"
                 >
                 <CollectionView.ItemsLayout>
                     <!--<LinearItemsLayout Orientation="Vertical" ItemSpacing="50"/>-->

@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace CollectionViewDemo_DEINT.MVVM.ViewModels
 {
@@ -12,9 +13,15 @@ namespace CollectionViewDemo_DEINT.MVVM.ViewModels
     {
         
         public ObservableCollection<Product> Products { get; set; }
-
+        public Product ProductoSeleccionado { get; set; }
+        public ICommand ProductoChanged { get; set; }
         public ProductVM()
         {
+            ProductoChanged = new Command(() =>
+            {
+                var productoseleccionado = ProductoSeleccionado;
+            });
+
             Products = new ObservableCollection<Product> {
                  new Product
                      {
